@@ -1,0 +1,168 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body Styling */
+body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f4f4f4;
+    padding: 20px;
+}
+
+/* Header Styling */
+header {
+    background: #333;
+    color: #fff;
+    padding: 10px 20px;
+    text-align: center;
+}
+
+/* Main Content Styling */
+main {
+    max-width: 800px;
+    margin: 20px auto;
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Footer Styling */
+footer {
+    text-align: center;
+    margin-top: 20px;
+    padding: 10px;
+    background: #333;
+    color: #ffffff;
+    border-radius: 8px;
+}
+/* button container*/
+.btn-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+}
+/* Button Styling */
+button.btn {
+    background-color: #7395b9;
+    color: rgb(255, 255, 255);
+    border: none;
+    padding: 8px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+button.btn:hover {
+    background-color: #0056b3;
+}
+/* About Me Section Styling */
+section#about-me {
+    background-color: #e8f0fe;
+    padding: 20px;
+    margin: 20px 0;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+section#about-me h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+section#about-me p {
+    font-size: 16px;
+    line-height: 1.6;
+    color: #555;
+}
+/* Skills Section Styling */
+section#skills {
+    background-color: #f9f9f9;
+    padding: 20px;
+    margin: 20px 0;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+section#skills h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+section#skills ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+section#skills ul li {
+    font-size: 16px;
+    line-height: 1.6;
+    color: #555;
+    margin-bottom: 5px;
+    display: flex;
+    align-items: center;
+    font-family: 'poppins', Roboto;
+    font-weight: 500;
+}
+
+section#skills ul li::before {
+    content: "✔";
+    color: #7395b9;
+    margin-right: 10px;
+    font-size: 14px;
+}
+body {
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+}
+
+/* Class to fade in the body */
+body.fade-in {
+    opacity: 1;
+}
+
+/* Contact Me Section Styling */
+section#contact-me {
+    background-color: #f4f4f4;
+    padding: 20px;
+    margin: 20px 0;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+section#contact-me h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+section#contact-me p {
+    font-size: 16px;
+    line-height: 1.6;
+    color: #555;
+}
+
+section#contact-me a {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 10px 15px;
+    background-color: #7395b9;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+section#contact-me a:hover {
+    background-color: #0056b3;
+}
