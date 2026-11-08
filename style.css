@@ -1,168 +1,78 @@
-/* General Reset */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+:root {
+  --bg: #f7f7f4;
+  --surface: #ffffff;
+  --text: #1c1c1a;
+  --muted: #5f5f5a;
+  --line: #e2e2dc;
+  --accent: #3b4de0;
+  --accent-text: #ffffff;
 }
-
-/* Body Styling */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #11131a;
+    --surface: #1a1d27;
+    --text: #ececf1;
+    --muted: #a0a3b1;
+    --line: #2a2e3c;
+    --accent: #8b97ff;
+    --accent-text: #11131a;
+  }
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
 body {
-    font-family: 'Arial', sans-serif;
-    line-height: 1.6;
-    color: #333;
-    background-color: #f4f4f4;
-    padding: 20px;
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  line-height: 1.6;
 }
+a { color: var(--accent); }
+img { max-width: 100%; display: block; }
 
-/* Header Styling */
-header {
-    background: #333;
-    color: #fff;
-    padding: 10px 20px;
-    text-align: center;
+.site-header, main, footer { max-width: 960px; margin: 0 auto; padding-left: 16px; padding-right: 16px; }
+.site-header {
+  display: flex; align-items: center; justify-content: space-between;
+  padding-top: 20px; padding-bottom: 20px; gap: 16px; flex-wrap: wrap;
 }
+.brand { font-weight: 700; color: var(--text); text-decoration: none; }
+nav { display: flex; gap: 20px; }
+nav a { color: var(--muted); text-decoration: none; }
+nav a:hover { color: var(--text); }
 
-/* Main Content Styling */
-main {
-    max-width: 800px;
-    margin: 20px auto;
-    background: #fff;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-}
+.hero { padding: 72px 0 56px; }
+.eyebrow { color: var(--muted); margin: 0 0 12px; }
+.hero h1 { font-size: clamp(2rem, 5vw, 3.2rem); line-height: 1.15; margin: 0 0 16px; max-width: 18ch; }
+.lead { font-size: 1.15rem; color: var(--muted); max-width: 58ch; margin: 0 0 28px; }
+.actions { display: flex; gap: 12px; flex-wrap: wrap; }
 
-/* Footer Styling */
-footer {
-    text-align: center;
-    margin-top: 20px;
-    padding: 10px;
-    background: #333;
-    color: #ffffff;
-    border-radius: 8px;
+.btn {
+  display: inline-block; padding: 10px 18px; border-radius: 8px;
+  background: var(--accent); color: var(--accent-text); text-decoration: none; font-weight: 600;
 }
-/* button container*/
-.btn-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-top: 20px;
-}
-/* Button Styling */
-button.btn {
-    background-color: #7395b9;
-    color: rgb(255, 255, 255);
-    border: none;
-    padding: 8px 10px;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 16px;
-    transition: background-color 0.3s ease;
-}
+.btn.ghost { background: transparent; color: var(--text); border: 1px solid var(--line); }
 
-button.btn:hover {
-    background-color: #0056b3;
-}
-/* About Me Section Styling */
-section#about-me {
-    background-color: #e8f0fe;
-    padding: 20px;
-    margin: 20px 0;
-    border-radius: 8px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-}
+section { padding: 40px 0; }
+h2 { font-size: 1.6rem; margin: 0 0 24px; }
+h3 { margin: 0 0 8px; font-size: 1.15rem; }
 
-section#about-me h2 {
-    font-size: 24px;
-    margin-bottom: 10px;
-    color: #333;
+.project {
+  background: var(--surface); border: 1px solid var(--line); border-radius: 12px;
+  padding: 24px; margin-bottom: 24px;
 }
+.shots { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 20px; }
+.shots img { border: 1px solid var(--line); border-radius: 8px; }
+.tags { list-style: none; display: flex; flex-wrap: wrap; gap: 8px; padding: 0; margin: 12px 0; }
+.tags li { font-size: 0.85rem; padding: 2px 10px; border: 1px solid var(--line); border-radius: 999px; color: var(--muted); }
+.points { margin: 0 0 12px; padding-left: 20px; color: var(--muted); }
 
-section#about-me p {
-    font-size: 16px;
-    line-height: 1.6;
-    color: #555;
-}
-/* Skills Section Styling */
-section#skills {
-    background-color: #f9f9f9;
-    padding: 20px;
-    margin: 20px 0;
-    border-radius: 8px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-}
+.skills { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 16px; }
+.skills div { background: var(--surface); border: 1px solid var(--line); border-radius: 12px; padding: 18px; }
+.skills p { margin: 0; color: var(--muted); }
 
-section#skills h2 {
-    font-size: 24px;
-    margin-bottom: 10px;
-    color: #333;
-}
+footer { padding-top: 24px; padding-bottom: 40px; color: var(--muted); border-top: 1px solid var(--line); margin-top: 24px; }
 
-section#skills ul {
-    list-style-type: none;
-    padding: 0;
-}
-
-section#skills ul li {
-    font-size: 16px;
-    line-height: 1.6;
-    color: #555;
-    margin-bottom: 5px;
-    display: flex;
-    align-items: center;
-    font-family: 'poppins', Roboto;
-    font-weight: 500;
-}
-
-section#skills ul li::before {
-    content: "✔";
-    color: #7395b9;
-    margin-right: 10px;
-    font-size: 14px;
-}
-body {
-    opacity: 0;
-    transition: opacity 1s ease-in-out;
-}
-
-/* Class to fade in the body */
-body.fade-in {
-    opacity: 1;
-}
-
-/* Contact Me Section Styling */
-section#contact-me {
-    background-color: #f4f4f4;
-    padding: 20px;
-    margin: 20px 0;
-    border-radius: 8px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    text-align: center;
-}
-
-section#contact-me h2 {
-    font-size: 24px;
-    margin-bottom: 10px;
-    color: #333;
-}
-
-section#contact-me p {
-    font-size: 16px;
-    line-height: 1.6;
-    color: #555;
-}
-
-section#contact-me a {
-    display: inline-block;
-    margin-top: 10px;
-    padding: 10px 15px;
-    background-color: #7395b9;
-    color: #fff;
-    text-decoration: none;
-    border-radius: 5px;
-    transition: background-color 0.3s ease;
-}
-
-section#contact-me a:hover {
-    background-color: #0056b3;
+@media (max-width: 600px) {
+  .shots { grid-template-columns: 1fr; }
+  .hero { padding-top: 40px; }
 }

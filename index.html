@@ -1,58 +1,109 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Portfolio Website</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Priyankar Mallick | Web developer</title>
+  <meta name="description" content="Portfolio of Priyankar Mallick, an undergraduate student building full-stack web apps with React, Node.js and Docker.">
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header>
-        <h1>Welcome to My Portfolio</h1>
-    </header>
-    <main>
-        <section id="name">
-            <h2>Priyankar</h2>
-            <p>Hello ! , This is me an under grad uni student.</p>
-            <br>
-            <div class="btn-container">
-                <button class="btn">Contact Me</button>
-            </div>
-        </section >
-        <br>
-        <br>
-        <section id="About Me">
-            <h2>About Me</h2>
-            <p>I'm a passionate web developer with a love for creating beautiful and functional websites.</p>
-            <p>My journey in web development started with a simple HTML page, and since then, I've been on a mission to learn and grow.</p>
-        </section>
-        <section id="skills">
-            <h2>skills</h2>
-            <ul>
-                <li>HTML</li>
-                <li>CSS</li>
-                <li>JavaScript</li>
-                <li>React</li>
-                <li>Node.js</li>
-                <li>Python</li>
-            </ul>
-        </section>
-        <section id="Contact">
-            <h2>Contact Me</h2>
-            <p>If you'd like to get in touch, feel free to reach out via email or connect with me on LinkedIn.</p>
-            <form action="/submit-form" method="post">
-               <input type="name" name="name" placeholder="Your Name" required>
-               <input type="email" name="email" placeholder="Your Email" required> 
-               <textarea name="Message" rows="4" cols="50"></textarea>
-               <br>
-               <button type="submit">submit-form</button>
-            </form>
-        </section>
-    </main>
-    <footer>
-        <p>&copy; 2023 Your Name. All rights reserved.</p>
-    </footer>
-    <script src="script.js"></script>
+  <header class="site-header">
+    <a class="brand" href="#top">Priyankar Mallick</a>
+    <nav>
+      <a href="#projects">Projects</a>
+      <a href="#skills">Skills</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <p class="eyebrow">Undergraduate student · Web developer</p>
+      <h1>I build web apps and learn to ship them properly.</h1>
+      <p class="lead">I started with a single HTML page and have moved on to full-stack projects with React, Node.js, databases, tests, Docker and CI.</p>
+      <div class="actions">
+        <a class="btn" href="#projects">See my projects</a>
+        <a class="btn ghost" href="https://github.com/Delusion-arch">GitHub</a>
+      </div>
+    </section>
+
+    <section id="projects">
+      <h2>Projects</h2>
+
+      <article class="project">
+        <div class="shots">
+          <img src="assets/portal-admin.png" alt="Admin screen listing enrollment requests with approve and reject buttons" loading="lazy">
+          <img src="assets/portal-student.png" alt="Student screen with the course catalog and application status" loading="lazy">
+        </div>
+        <div class="info">
+          <h3>OUTR Student Portal</h3>
+          <p>A student registration and course enrollment portal. Students request courses and follow the status; teachers approve requests, take attendance and see course analytics.</p>
+          <ul class="tags"><li>React</li><li>Express</li><li>SQLite</li><li>JWT</li><li>Docker</li><li>GitHub Actions</li></ul>
+          <ul class="points">
+            <li>18 API tests, run on every push</li>
+            <li>CI starts the full Docker Compose stack and logs a user in</li>
+            <li>Admin sign-up protected by an invite code</li>
+          </ul>
+          <p><a href="https://github.com/Delusion-arch/outr-student-portal">View on GitHub →</a></p>
+        </div>
+      </article>
+
+      <article class="project">
+        <div class="info">
+          <h3>EduEnroll</h3>
+          <p>The same problem on a serverless backend. Students and admins have separate dashboards, and access is enforced by Firestore security rules rather than only in the UI.</p>
+          <ul class="tags"><li>React</li><li>TypeScript</li><li>Tailwind</li><li>Firebase</li><li>Vitest</li><li>Docker</li></ul>
+          <ul class="points">
+            <li>Enrollment rules (duplicates, capacity, prerequisites) pulled out into unit-tested code</li>
+            <li>Type-check, tests, build and Docker image build in CI</li>
+          </ul>
+          <p><a href="https://github.com/Delusion-arch/EduEnroll">View on GitHub →</a></p>
+        </div>
+      </article>
+
+      <article class="project">
+        <div class="info">
+          <h3>To-Do List</h3>
+          <p>One of my first projects: add, complete and delete tasks, in plain HTML, CSS and JavaScript with a responsive layout.</p>
+          <ul class="tags"><li>HTML</li><li>CSS</li><li>JavaScript</li></ul>
+          <p><a href="https://github.com/Delusion-arch/TO-DO-List">View on GitHub →</a></p>
+        </div>
+      </article>
+    </section>
+
+    <section id="skills">
+      <h2>Skills</h2>
+      <div class="skills">
+        <div>
+          <h3>Languages</h3>
+          <p>HTML, CSS, JavaScript, TypeScript, Python</p>
+        </div>
+        <div>
+          <h3>Frontend</h3>
+          <p>React, Vite, Tailwind CSS</p>
+        </div>
+        <div>
+          <h3>Backend and data</h3>
+          <p>Node.js, Express, SQLite, Firebase (Auth and Firestore)</p>
+        </div>
+        <div>
+          <h3>Tooling</h3>
+          <p>Git and GitHub, Docker, GitHub Actions, Jest, Vitest</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <h2>Contact</h2>
+      <p>The best way to reach me right now is on GitHub. Open an issue on any of my projects or look through my code.</p>
+      <p><a class="btn" href="https://github.com/Delusion-arch">github.com/Delusion-arch</a></p>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; <span id="year">2026</span> Priyankar Mallick</p>
+  </footer>
+  <script src="script.js"></script>
 </body>
 </html>
